@@ -8,8 +8,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';  
 import 'date-fns';
-import AutoScheduleButton from './AutoScheduleButton'
-import ResolveConflictsButton from './ResolveConflictsButton'
+import AutoScheduleButton from '../AutoScheduleButton'
+import ResolveConflictsButton from '../ResolveConflictsButton'
 
 class SchedulePage extends React.Component {
     constructor(props){//api, users, static(contains grades, usergroups, sections, qualifications, certifications)
