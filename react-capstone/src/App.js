@@ -20,7 +20,7 @@ class App extends React.Component {
     this.state = {
       users: [],
       staticTables: {}, //contains grades, usergroups, sections, qualifications, certifications, positions 
-      apiURL: 'http://localhost:8080/'
+      apiURL: 'https://sdi08.staging.dso.mil/sdi08-api/'
     }
   }
 
