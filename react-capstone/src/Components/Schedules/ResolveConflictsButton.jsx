@@ -5,7 +5,7 @@ function ResolveConflictsButton(props) {
         alert("Please wait, this will take time");
         fetch(props.api+"schedule/resolve", {
             method: "POST"
-        }).then(ret.text()).then((ret)=>{
+        }).then(ret=>ret.text()).then((ret)=>{
             if (ret==="success") {
                 alert("Successfully resolved all conflicts")
             }else{
