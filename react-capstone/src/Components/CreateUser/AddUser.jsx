@@ -77,6 +77,12 @@ class AddUser extends React.Component {
 
     }
 
+    Cancel =(event)=>{
+      event.preventDefault();
+      this.ResetNewUserForm();
+      this.setState({showModifyUserForm: false});
+    }
+
     SubmitNewUser = async (event) => {
       event.preventDefault()
       if (this.state.newUser.certifications[0].cert_id === 0) {
@@ -396,12 +402,12 @@ class AddUser extends React.Component {
               </td> 
 
               <td>
-                <select id="flight" onChange={handleChange} value={this.props.static.sections[0]}> 
+                <select id="flight" onChange={handleChange} defaultvalue={this.state.newUser.section}> 
                   {this.props.static.sections.map(flight => <option id="flight" value={flight.section_id}> {flight.section_name} </option> )}
                 </select>
               </td>  
               <td>
-                  <select id="crew" onChange={handleChange} value={this.props.static.usergroups[0]}> 
+                  <select id="crew" onChange={handleChange} defaultvalue={this.state.newUser.user_group}> 
                       {this.props.static.usergroups.map(crew => <option id="crew" value={crew.group_id}> {crew.group_name} </option> )}
                   </select>
               </td>               
@@ -412,6 +418,7 @@ class AddUser extends React.Component {
                 </select>
               </td>                                              
               <td> <button onClick={this.SubmitNewUser} value="Add New User">Add New User</button>  </td>
+              <td> <button onClick={this.Cancel} value="Cancel">Cancel</button></td>
           </tr>   
 
         )
