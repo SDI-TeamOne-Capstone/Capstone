@@ -79,6 +79,11 @@ class ModifyUser extends React.Component {
     }))
   }
   
+  Cancel =(event)=>{
+    event.preventDefault();
+    this.intializeUsers();
+    this.setState({showModifyUserForm: false});
+  }
 
   SubmitUpdatedUser = async (event) => {
     //check for no certs
@@ -532,11 +537,12 @@ class ModifyUser extends React.Component {
             <option id='active' value={false}>Archived</option>
           </select>
         </td>
-        <button onClick={this.SubmitUpdatedUser} value="Update User">Update User</button>
-
+        <td><button onClick={this.SubmitUpdatedUser} value="Update User">Update User</button></td>
+        <td><button onClick={this.Cancel} value="Cancel">Cancel</button></td>
       </tr>
     )
   }
+
 
 
   ModifyUserButton = () => {
@@ -549,7 +555,7 @@ class ModifyUser extends React.Component {
     return (
         <Button
             variant="contained"
-            color="seconday"
+            color="secondary"
             id="addUserButton"
             onClick={handleClick}
         >
